@@ -1,0 +1,14 @@
+
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Õ£®í¬1
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ö£®í¬1
+g	java:S112:"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ö£®í¬1
+a
+java:S2147"DCombine this catch with the one at line 21, which has the same body.(ï­£Ä8Ş£®í¬1
+^
+java:S1854$"<Remove this useless assignment to local variable "response".(¹ ×úÿÿÿÿ8Çå®í¬1
+Y
+java:S1854'"<Remove this useless assignment to local variable "response".(ı³ğœ8¬²¯í¬1
+C
+java:S1481"'Remove this unused "st" local variable.(¸×Æ8á£®í¬1
+O
+java:S1481$"-Remove this unused "response" local variable.(¹ ×úÿÿÿÿ8á£®í¬1
