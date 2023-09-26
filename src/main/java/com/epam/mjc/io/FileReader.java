@@ -38,13 +38,4 @@ public class FileReader {
         }
         return new Profile(name, age, email, phone);
     }
-
-    public static void main (String[] args) {
-        FileReader fileReader = new FileReader();
-        try {
-            fileReader.getDataFromFile(new File("src/main/resources/Profile.txt"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
 }
