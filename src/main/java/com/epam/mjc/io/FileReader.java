@@ -21,7 +21,7 @@ public class FileReader {
                 sb.append(tmp).append(";");
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
         tmp = sb.toString();
         String[] response = tmp.split(";");
