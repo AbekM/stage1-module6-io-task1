@@ -8,43 +8,36 @@ import java.io.IOException;
 
 public class FileReader {
 
-    private String readFile(File file) {
-        String response = null;
+    public Profile getDataFromFile(File file) throws IOException {
+        String name = null;
+        Integer age = null;
+        Long phone = null;
+        String email = null;
         String tmp;
         StringBuilder sb = new StringBuilder();
+        BufferedReader br;
         try (java.io.FileReader fr = new java.io.FileReader(file)) {
-            BufferedReader br = new BufferedReader(fr);
+            br = new BufferedReader(fr);
             while ((tmp = br.readLine()) != null) {
-                sb.append(tmp);
+                sb.append(tmp + ";");
             }
-
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        response = sb.toString();
-        return response;
-    }
-
-    public Profile getDataFromFile(File file) throws IOException {
-        String st;
-        String name = null;
-        Integer age = null;
-        String email = null;
-        Long phone = null;
-        String response = readFile(file);
-        String tmp;
-
-        while ((response = br.readLine()) != null) {
-            if (tmp.startsWith("Name")) {
-                name = tmp.substring(6);
-            } else if (tmp.startsWith("Age")) {
-                age = Integer.parseInt(tmp.substring(5));
-            } else if (tmp.startsWith("Email")) {
-                email = tmp.substring(7);
-            } else if (tmp.startsWith("Phone")) {
-                phone = Long.parseLong(tmp.substring(7));
+        tmp = sb.toString();
+        String[] response = tmp.split(";");
+        for (int i = 0; i < response.length; i++){
+            System.out.println(response[i]);
+            if (response[i].startsWith("Name")) {
+                name = response[i].substring(6);
+            } else if (response[i].startsWith("Age")) {
+                age = Integer.parseInt(response[i].substring(5));
+            } else if (response[i].startsWith("Email")) {
+                email = response[i].substring(7);
+            } else if (response[i].startsWith("Phone")) {
+                phone = Long.parseLong(response[i].substring(7));
             }
         }
         return new Profile(name, age, email, phone);
